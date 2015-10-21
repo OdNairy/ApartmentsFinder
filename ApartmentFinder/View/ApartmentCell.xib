@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15B38b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ApartmentCell" customModule="ApartmentFinder" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bQb-Ho-UIx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+                        <animations/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topShadow" translatesAutoresizingMaskIntoConstraints="NO" id="QPc-7Y-3Jn" userLabel="topShadow">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
+                        <animations/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomShadow" translatesAutoresizingMaskIntoConstraints="NO" id="nD3-Ia-73F">
+                        <rect key="frame" x="0.0" y="90" width="320" height="150"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="150" id="3yT-WH-RcK"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="H79-5l-oYK">
+                        <rect key="frame" x="8" y="8" width="82" height="24"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="24" translatesAutoresizingMaskIntoConstraints="NO" id="Mhu-yW-HZl" customClass="OwnerMarkView" customModule="ApartmentFinder" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="24"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guL-i4-oeY" userLabel="UpLabel">
+                                <rect key="frame" x="40" y="0.0" width="42" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="JUO-no-Peb">
+                        <rect key="frame" x="8" y="169" width="148" height="65"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="290 $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbW-Tc-cfM">
+                                <rect key="frame" x="0.0" y="0.0" width="43.5" height="19.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 986 300 руб." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbW-sY-7zS">
+                                <rect key="frame" x="0.0" y="21.5" width="148" height="25.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CEq-By-BuV">
+                                <rect key="frame" x="0.0" y="49" width="145" height="16"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1к" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyP-ta-UZ1">
+                                        <rect key="frame" x="0.0" y="0.0" width="13" height="16"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Григория Ширмы, 7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDW-SR-vqg">
+                                        <rect key="frame" x="21" y="0.0" width="124" height="16"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                            </stackView>
+                        </subviews>
+                        <animations/>
+                    </stackView>
+                </subviews>
+                <animations/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <animations/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="bQb-Ho-UIx" secondAttribute="bottom" id="6P0-uh-2h5"/>
+                <constraint firstAttribute="trailing" secondItem="QPc-7Y-3Jn" secondAttribute="trailing" id="7OA-p5-QBA"/>
+                <constraint firstAttribute="trailing" secondItem="nD3-Ia-73F" secondAttribute="trailing" id="Agk-vc-DTx"/>
+                <constraint firstAttribute="leadingMargin" secondItem="H79-5l-oYK" secondAttribute="leading" id="C1O-Ls-Mad"/>
+                <constraint firstItem="bQb-Ho-UIx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="H2p-OB-gHr"/>
+                <constraint firstAttribute="leadingMargin" secondItem="JUO-no-Peb" secondAttribute="leading" id="UHC-nG-uKD"/>
+                <constraint firstItem="QPc-7Y-3Jn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="UTL-x7-uKg"/>
+                <constraint firstAttribute="trailing" secondItem="bQb-Ho-UIx" secondAttribute="trailing" id="XLG-BH-9X5"/>
+                <constraint firstItem="nD3-Ia-73F" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="b3p-84-AnJ"/>
+                <constraint firstAttribute="topMargin" secondItem="H79-5l-oYK" secondAttribute="top" id="lve-KP-hGJ"/>
+                <constraint firstItem="bQb-Ho-UIx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="m5y-5S-Nrs"/>
+                <constraint firstAttribute="bottom" secondItem="nD3-Ia-73F" secondAttribute="bottom" id="nqC-ZQ-pdE"/>
+                <constraint firstItem="QPc-7Y-3Jn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xhj-fE-EVu"/>
+                <constraint firstAttribute="bottomMargin" secondItem="JUO-no-Peb" secondAttribute="bottom" constant="-2" id="ykK-be-Mi2"/>
+            </constraints>
+            <size key="customSize" width="372" height="242"/>
+            <connections>
+                <outlet property="addressLabel" destination="oDW-SR-vqg" id="Mq6-9n-RXh"/>
+                <outlet property="byrPriceLabel" destination="zbW-sY-7zS" id="5WR-25-CTV"/>
+                <outlet property="ownerView" destination="Mhu-yW-HZl" id="lJ7-EQ-gBi"/>
+                <outlet property="previewView" destination="bQb-Ho-UIx" id="HXt-IM-XrG"/>
+                <outlet property="roomCountlabel" destination="nyP-ta-UZ1" id="5tc-KC-dSm"/>
+                <outlet property="upTextLabel" destination="guL-i4-oeY" id="oop-m8-NKX"/>
+                <outlet property="usdPriceLabel" destination="xbW-Tc-cfM" id="ZCa-aA-f75"/>
+            </connections>
+            <point key="canvasLocation" x="-583" y="18"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="bottomShadow" width="1" height="100"/>
+        <image name="topShadow" width="1" height="39"/>
+    </resources>
+</document>
