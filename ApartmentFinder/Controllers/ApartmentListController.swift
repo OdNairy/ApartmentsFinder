@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import TLYShyNavBar
 
 private let reuseIdentifier = "Cell"
 
 class ApartmentListController: UICollectionViewController {
+    var webController : WebController?
     var apartments : [Apartment] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Preload WebController to reduce webView load time
+        webController = self.storyboard?.instantiateViewControllerWithIdentifier("WebController") as? WebController
+        webController?.loadViewIfNeeded()
+        
+        self.shyNavBarManager.scrollView = self.collectionView
         
         let query = Apartment.query()
         query?.limit = 50
@@ -46,6 +54,14 @@ class ApartmentListController: UICollectionViewController {
         layout.itemSize = cellSize
     }
     
+    
+    // Unwind actions
+    @IBAction func cancelOptions(segue: UIStoryboardSegue){
+
+    }
+    @IBAction func doneOptions(segue: UIStoryboardSegue){
+        
+    }
     /*
     // MARK: - Navigation
     
@@ -85,6 +101,17 @@ class ApartmentListController: UICollectionViewController {
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return .Portrait
     }
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        guard (webController != nil) else { return }
+        let apartment = apartments[indexPath.row]
+        
+        let url = NSURL(string: apartment.url)!
+        let urlRequest = NSURLRequest(URL: url)
+        webController?.webView.loadRequest(urlRequest)
+        self.navigationController?.pushViewController(webController!, animated: true)
+    }
+//    collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    
     
     // MARK: UICollectionViewDelegate
     

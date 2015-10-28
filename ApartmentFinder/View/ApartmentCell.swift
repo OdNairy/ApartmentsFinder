@@ -20,6 +20,8 @@ class ApartmentCell: UICollectionViewCell {
     @IBOutlet weak var byrPriceLabel: UILabel!
     @IBOutlet weak var roomCountlabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
+
+    static var formatter = NSNumberFormatter()
     var numberFormatter : NSNumberFormatter {
         get {
             let numberFormatter =  NSNumberFormatter()
@@ -42,10 +44,11 @@ class ApartmentCell: UICollectionViewCell {
         formatter.numberStyle = .CurrencyStyle
         formatter.currencySymbol = "$"
         formatter.currencyGroupingSeparator = " "
+        formatter.maximumFractionDigits = 0;
 //        formatter.currencyCode = "USD"
         
         self.usdPriceLabel.text = formatter.stringFromNumber(NSNumber(integer: apartment.priceUSD))
-        formatter.currencySymbol = NSLocalizedString("BYR.currencySymbol", comment: "")
+        formatter.currencySymbol = NSLocalizedString("Br", comment: "Currency Symbol on ApartmentCell")
         self.byrPriceLabel.text = formatter.stringFromNumber(NSNumber(integer: apartment.priceBYR))
         self.addressLabel.text = apartment.userAddress
         

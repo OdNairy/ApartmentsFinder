@@ -8,24 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		311F7444607291E883B5D4C0 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DCBBB8047A6558F7DEE1084 /* Pods.framework */; };
-		FE3170461BD3900C007B16A6 /* OwnerMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEECBF491BD383E500D5DC72 /* OwnerMarkView.swift */; settings = {ASSET_TAGS = (); }; };
-		FE71756C1BD434C700B21B4D /* ApartmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71756A1BD434C700B21B4D /* ApartmentCell.swift */; settings = {ASSET_TAGS = (); }; };
-		FE71756D1BD434C700B21B4D /* ApartmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE71756B1BD434C700B21B4D /* ApartmentCell.xib */; settings = {ASSET_TAGS = (); }; };
-		FED185AE1BD4294E00CFB28B /* Apartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED185AD1BD4294E00CFB28B /* Apartment.swift */; settings = {ASSET_TAGS = (); }; };
+		FE13FF0A1BDFC607001F61C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE13FF0C1BDFC607001F61C5 /* InfoPlist.strings */; };
+		FE13FF0F1BDFFF90001F61C5 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13FF0E1BDFFF90001F61C5 /* WebController.swift */; };
+		FE13FF111BE0D24C001F61C5 /* OptionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13FF101BE0D24C001F61C5 /* OptionsController.swift */; };
+		FE3170461BD3900C007B16A6 /* OwnerMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEECBF491BD383E500D5DC72 /* OwnerMarkView.swift */; };
+		FE71756C1BD434C700B21B4D /* ApartmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71756A1BD434C700B21B4D /* ApartmentCell.swift */; };
+		FE71756D1BD434C700B21B4D /* ApartmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE71756B1BD434C700B21B4D /* ApartmentCell.xib */; };
+		FE8C41E01BD8D5DD00CF6BFA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE8C41E21BD8D5DD00CF6BFA /* Localizable.strings */; };
+		FE9C28DA1BE0EEBE0095E950 /* TextFieldOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9C28D91BE0EEBE0095E950 /* TextFieldOptionCell.swift */; };
+		FE9C28DC1BE0F5BA0095E950 /* OptionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9C28DB1BE0F5BA0095E950 /* OptionsData.swift */; };
+		FED185AE1BD4294E00CFB28B /* Apartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED185AD1BD4294E00CFB28B /* Apartment.swift */; };
 		FEECBF151BD3748000D5DC72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEECBF141BD3748000D5DC72 /* AppDelegate.swift */; };
 		FEECBF1A1BD3748000D5DC72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEECBF181BD3748000D5DC72 /* Main.storyboard */; };
 		FEECBF1D1BD3748000D5DC72 /* ApartmentFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEECBF1B1BD3748000D5DC72 /* ApartmentFinder.xcdatamodeld */; };
 		FEECBF1F1BD3748000D5DC72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEECBF1E1BD3748000D5DC72 /* Assets.xcassets */; };
 		FEECBF221BD3748000D5DC72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEECBF201BD3748000D5DC72 /* LaunchScreen.storyboard */; };
-		FEECBF461BD37A7100D5DC72 /* ApartmentListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEECBF451BD37A7100D5DC72 /* ApartmentListController.swift */; settings = {ASSET_TAGS = (); }; };
+		FEECBF461BD37A7100D5DC72 /* ApartmentListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEECBF451BD37A7100D5DC72 /* ApartmentListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		011D312534E42C4AFEE11B91 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8DCBBB8047A6558F7DEE1084 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D3D869F28869D94227A2D9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FE13FF061BDFC0DA001F61C5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		FE13FF0B1BDFC607001F61C5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FE13FF0D1BDFC607001F61C5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FE13FF0E1BDFFF90001F61C5 /* WebController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
+		FE13FF101BE0D24C001F61C5 /* OptionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsController.swift; sourceTree = "<group>"; };
 		FE71756A1BD434C700B21B4D /* ApartmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApartmentCell.swift; sourceTree = "<group>"; };
 		FE71756B1BD434C700B21B4D /* ApartmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApartmentCell.xib; sourceTree = "<group>"; };
+		FE8C41E11BD8D5DD00CF6BFA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FE9C28D91BE0EEBE0095E950 /* TextFieldOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldOptionCell.swift; sourceTree = "<group>"; };
+		FE9C28DB1BE0F5BA0095E950 /* OptionsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsData.swift; sourceTree = "<group>"; };
 		FED185AD1BD4294E00CFB28B /* Apartment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apartment.swift; sourceTree = "<group>"; };
 		FEECBF111BD3748000D5DC72 /* ApartmentFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApartmentFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEECBF141BD3748000D5DC72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,10 +81,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FE13FF071BDFC31E001F61C5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE13FF0C1BDFC607001F61C5 /* InfoPlist.strings */,
+				FE8C41E21BD8D5DD00CF6BFA /* Localizable.strings */,
+				FEECBF1E1BD3748000D5DC72 /* Assets.xcassets */,
+				FEECBF201BD3748000D5DC72 /* LaunchScreen.storyboard */,
+				FEECBF231BD3748000D5DC72 /* Info.plist */,
+				FEECBF1B1BD3748000D5DC72 /* ApartmentFinder.xcdatamodeld */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
 		FED185AC1BD428EE00CFB28B /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				FED185AD1BD4294E00CFB28B /* Apartment.swift */,
+				FE9C28DB1BE0F5BA0095E950 /* OptionsData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -96,15 +124,12 @@
 		FEECBF131BD3748000D5DC72 /* ApartmentFinder */ = {
 			isa = PBXGroup;
 			children = (
-				FEECBF141BD3748000D5DC72 /* AppDelegate.swift */,
-				FEECBF181BD3748000D5DC72 /* Main.storyboard */,
-				FEECBF1E1BD3748000D5DC72 /* Assets.xcassets */,
-				FEECBF201BD3748000D5DC72 /* LaunchScreen.storyboard */,
-				FEECBF231BD3748000D5DC72 /* Info.plist */,
-				FEECBF1B1BD3748000D5DC72 /* ApartmentFinder.xcdatamodeld */,
 				FEECBF471BD37A7600D5DC72 /* Controllers */,
 				FEECBF481BD383A500D5DC72 /* View */,
 				FED185AC1BD428EE00CFB28B /* Model */,
+				FEECBF181BD3748000D5DC72 /* Main.storyboard */,
+				FEECBF141BD3748000D5DC72 /* AppDelegate.swift */,
+				FE13FF071BDFC31E001F61C5 /* Support Files */,
 			);
 			path = ApartmentFinder;
 			sourceTree = "<group>";
@@ -113,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				FEECBF451BD37A7100D5DC72 /* ApartmentListController.swift */,
+				FE13FF0E1BDFFF90001F61C5 /* WebController.swift */,
+				FE13FF101BE0D24C001F61C5 /* OptionsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -123,6 +150,7 @@
 				FEECBF491BD383E500D5DC72 /* OwnerMarkView.swift */,
 				FE71756A1BD434C700B21B4D /* ApartmentCell.swift */,
 				FE71756B1BD434C700B21B4D /* ApartmentCell.xib */,
+				FE9C28D91BE0EEBE0095E950 /* TextFieldOptionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,6 +216,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEECBF221BD3748000D5DC72 /* LaunchScreen.storyboard in Resources */,
+				FE13FF0A1BDFC607001F61C5 /* InfoPlist.strings in Resources */,
+				FE8C41E01BD8D5DD00CF6BFA /* Localizable.strings in Resources */,
 				FEECBF1F1BD3748000D5DC72 /* Assets.xcassets in Resources */,
 				FE71756D1BD434C700B21B4D /* ApartmentCell.xib in Resources */,
 				FEECBF1A1BD3748000D5DC72 /* Main.storyboard in Resources */,
@@ -251,9 +281,13 @@
 			files = (
 				FEECBF461BD37A7100D5DC72 /* ApartmentListController.swift in Sources */,
 				FEECBF1D1BD3748000D5DC72 /* ApartmentFinder.xcdatamodeld in Sources */,
+				FE13FF111BE0D24C001F61C5 /* OptionsController.swift in Sources */,
 				FE71756C1BD434C700B21B4D /* ApartmentCell.swift in Sources */,
+				FE9C28DA1BE0EEBE0095E950 /* TextFieldOptionCell.swift in Sources */,
+				FE13FF0F1BDFFF90001F61C5 /* WebController.swift in Sources */,
 				FED185AE1BD4294E00CFB28B /* Apartment.swift in Sources */,
 				FE3170461BD3900C007B16A6 /* OwnerMarkView.swift in Sources */,
+				FE9C28DC1BE0F5BA0095E950 /* OptionsData.swift in Sources */,
 				FEECBF151BD3748000D5DC72 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,10 +295,27 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		FE13FF0C1BDFC607001F61C5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE13FF0B1BDFC607001F61C5 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FE8C41E21BD8D5DD00CF6BFA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE8C41E11BD8D5DD00CF6BFA /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		FEECBF181BD3748000D5DC72 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FEECBF191BD3748000D5DC72 /* Base */,
+				FE13FF061BDFC0DA001F61C5 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -273,6 +324,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FEECBF211BD3748000D5DC72 /* Base */,
+				FE13FF0D1BDFC607001F61C5 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

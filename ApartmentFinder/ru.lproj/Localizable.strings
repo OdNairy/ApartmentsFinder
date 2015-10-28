@@ -1,0 +1,9 @@
+/* OwnerType */
+"Agent" = "Агентство";
+
+/* Currency Symbol on ApartmentCell */
+"Br" = "руб.";
+
+/* OwnerType */
+"Owner" = "Собственник";
+

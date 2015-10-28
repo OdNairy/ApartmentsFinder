@@ -37,12 +37,19 @@ class OwnerMarkView: UIView {
         
         textLabel = UILabel()
         self.addSubview(textLabel!)
+        
+        setupTextLabel()
+    }
+    
+    func setupTextLabel(){
         textLabel?.textColor = UIColor.whiteColor()
-        setupLabelContraints(textLabel!)
+        textLabel?.font = UIFont(name: "HelveticaNeue-Medium", size: 16)
+        
+        setupTextLabelContraints(textLabel!)
         updateLabelData()
     }
     
-    func setupLabelContraints(label: UILabel) {
+    func setupTextLabelContraints(label: UILabel) {
         label.translatesAutoresizingMaskIntoConstraints = false
         let vContraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[label]-|",
             options: NSLayoutFormatOptions(rawValue: 0),
@@ -60,10 +67,10 @@ class OwnerMarkView: UIView {
     func updateLabelData() {
         switch (ownerType){
         case .Owner:
-            textLabel?.text = "Owner"
+            textLabel?.text = NSLocalizedString("Owner", comment: "OwnerType")
             break
         case .Agent:
-            textLabel?.text = "Agent"
+            textLabel?.text = NSLocalizedString("Agent", comment: "OwnerType")
             break;
         default:
             textLabel?.text = nil
