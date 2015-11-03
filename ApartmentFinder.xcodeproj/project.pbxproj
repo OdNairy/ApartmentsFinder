@@ -18,6 +18,7 @@
 		FE9C28DA1BE0EEBE0095E950 /* TextFieldOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9C28D91BE0EEBE0095E950 /* TextFieldOptionCell.swift */; };
 		FE9C28DC1BE0F5BA0095E950 /* OptionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9C28DB1BE0F5BA0095E950 /* OptionsData.swift */; };
 		FED185AE1BD4294E00CFB28B /* Apartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED185AD1BD4294E00CFB28B /* Apartment.swift */; };
+		FED8FF781BE5242000FE02FD /* OwnerOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED8FF771BE5242000FE02FD /* OwnerOptionCell.swift */; };
 		FEECBF151BD3748000D5DC72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEECBF141BD3748000D5DC72 /* AppDelegate.swift */; };
 		FEECBF1A1BD3748000D5DC72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEECBF181BD3748000D5DC72 /* Main.storyboard */; };
 		FEECBF1D1BD3748000D5DC72 /* ApartmentFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEECBF1B1BD3748000D5DC72 /* ApartmentFinder.xcdatamodeld */; };
@@ -41,6 +42,7 @@
 		FE9C28D91BE0EEBE0095E950 /* TextFieldOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldOptionCell.swift; sourceTree = "<group>"; };
 		FE9C28DB1BE0F5BA0095E950 /* OptionsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsData.swift; sourceTree = "<group>"; };
 		FED185AD1BD4294E00CFB28B /* Apartment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apartment.swift; sourceTree = "<group>"; };
+		FED8FF771BE5242000FE02FD /* OwnerOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerOptionCell.swift; sourceTree = "<group>"; };
 		FEECBF111BD3748000D5DC72 /* ApartmentFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApartmentFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEECBF141BD3748000D5DC72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEECBF191BD3748000D5DC72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				FE71756A1BD434C700B21B4D /* ApartmentCell.swift */,
 				FE71756B1BD434C700B21B4D /* ApartmentCell.xib */,
 				FE9C28D91BE0EEBE0095E950 /* TextFieldOptionCell.swift */,
+				FED8FF771BE5242000FE02FD /* OwnerOptionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			files = (
 				FEECBF461BD37A7100D5DC72 /* ApartmentListController.swift in Sources */,
 				FEECBF1D1BD3748000D5DC72 /* ApartmentFinder.xcdatamodeld in Sources */,
+				FED8FF781BE5242000FE02FD /* OwnerOptionCell.swift in Sources */,
 				FE13FF111BE0D24C001F61C5 /* OptionsController.swift in Sources */,
 				FE71756C1BD434C700B21B4D /* ApartmentCell.swift in Sources */,
 				FE9C28DA1BE0EEBE0095E950 /* TextFieldOptionCell.swift in Sources */,

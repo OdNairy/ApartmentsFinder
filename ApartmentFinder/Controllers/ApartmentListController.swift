@@ -8,34 +8,53 @@
 
 import UIKit
 import TLYShyNavBar
+import Bolts
 
 private let reuseIdentifier = "Cell"
 
+func documentsDirectoryPath() -> String {
+    // NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0
+    let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first
+    return documentsPath!+"/"
+}
+
+func documentsDirectoryPath(filename: String) -> String {
+    return documentsDirectoryPath()+filename
+}
+
 class ApartmentListController: UICollectionViewController {
     var webController : WebController?
-    var apartments : [Apartment] = []
+    var apartments = [Apartment]()
+    
+    var optionsData: OptionsData = {
+        // Default value initializer
+        guard let options = NSKeyedUnarchiver.unarchiveObjectWithFile(documentsDirectoryPath("optionsData")) else {
+            return OptionsData()
+        }
+        return options as! OptionsData
+        }()
+        {
+        didSet{
+            if false == NSKeyedArchiver.archiveRootObject(optionsData, toFile: documentsDirectoryPath("optionsData")) {
+                print("optionsData archive failed")
+            }
+            updateApartmentsData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        updateApartmentsData()
         // Preload WebController to reduce webView load time
         webController = self.storyboard?.instantiateViewControllerWithIdentifier("WebController") as? WebController
         webController?.loadViewIfNeeded()
         
         self.shyNavBarManager.scrollView = self.collectionView
-        
-        let query = Apartment.query()
-        query?.limit = 50
-        query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-            guard let objects = objects else {
-                return
-            }
-            self.apartments = objects as! [Apartment]
-            self.collectionView?.reloadData()
-        })
+
         self.collectionView?.registerNib(
             UINib(nibName: "ApartmentCell", bundle: nil),
             forCellWithReuseIdentifier: reuseIdentifier)
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -54,14 +73,61 @@ class ApartmentListController: UICollectionViewController {
         layout.itemSize = cellSize
     }
     
+    func updateApartmentsData() -> BFTask? {
+        let query = Apartment.query()
+        query?.limit = 50
+        query?.orderByDescending("onlinerID")
+        
+        if let minPrice = optionsData.minimumPrice {
+            query?.whereKey("priceUSD", greaterThanOrEqualTo: minPrice)
+        }
+        if let maxPrice = optionsData.maximumPrice {
+            query?.whereKey("priceUSD", lessThanOrEqualTo: maxPrice)
+        }
+            switch (optionsData.owner) {
+            case .All:
+                break;
+            case .Agent:
+                query?.whereKey("owner", equalTo: false)
+            case .Owner:
+                query?.whereKey("owner", equalTo: true)
+            }
+        
+        var task = query?.findObjectsInBackground()
+        task = task!.continueWithSuccessBlock({ (task) -> AnyObject! in
+            self.apartments = task.result as! [Apartment]
+            return true
+        })
+        return task?.continueWithExecutor(BFExecutor.mainThreadExecutor(), withBlock: { (task) -> AnyObject! in
+            self.collectionView?.reloadData()
+            return true
+        })
+    }
     
     // Unwind actions
     @IBAction func cancelOptions(segue: UIStoryboardSegue){
 
     }
     @IBAction func doneOptions(segue: UIStoryboardSegue){
+        guard let optionsController = segue.sourceViewController as? OptionsController else {
+            return
+        }
+        self.optionsData = optionsController.optionsData
+    }
+    
+    /*
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let destinationVC =  segue.destinationViewController
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        let effectView = UIVisualEffectView(effect: blurEffect)
+        effectView.frame = self.view.bounds
+        
+        destinationVC.view.backgroundColor = UIColor.clearColor()
+        destinationVC.view.insertSubview(effectView, atIndex: 0)
+        destinationVC.modalPresentationStyle = .CurrentContext
         
     }
+    */
     /*
     // MARK: - Navigation
     
@@ -109,6 +175,19 @@ class ApartmentListController: UICollectionViewController {
         let urlRequest = NSURLRequest(URL: url)
         webController?.webView.loadRequest(urlRequest)
         self.navigationController?.pushViewController(webController!, animated: true)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard segue.identifier == "OpenOptions" else {
+            return
+        }
+        let navigationController = segue.destinationViewController as! UINavigationController
+        guard ((navigationController.topViewController?.isKindOfClass(OptionsController.self)) != nil), let optionsController = navigationController.topViewController as? OptionsController else {
+            return
+            
+        }
+
+        optionsController.optionsData = self.optionsData
     }
 //    collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     

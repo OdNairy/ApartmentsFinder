@@ -8,7 +8,7 @@
         <!--Navigation Controller-->
         <scene sceneID="8hY-6e-aaP">
             <objects>
-                <navigationController id="1LM-vu-ieA" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="currentContext" id="1LM-vu-ieA" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Idh-eC-9CZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -22,10 +22,10 @@
             </objects>
             <point key="canvasLocation" x="2164" y="-564"/>
         </scene>
-        <!--Options Controller-->
+        <!--Options-->
         <scene sceneID="zWo-C0-MbO">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="1bW-eU-Imb" customClass="OptionsController" customModule="ApartmentFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="currentContext" id="1bW-eU-Imb" customClass="OptionsController" customModule="ApartmentFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gVT-NI-ojk"/>
                         <viewControllerLayoutGuide type="bottom" id="Uup-TM-KYw"/>
@@ -37,9 +37,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9is-Tr-02o">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="UM0-ad-f9d">
-                                    <rect key="frame" x="0.0" y="108" width="600" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="188" width="600" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -52,7 +52,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxQ-f8-hjA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxQ-f8-hjA">
                                                     <rect key="frame" x="8" y="29" width="42" height="20.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -67,10 +67,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XUz-U1-VNc">
-                                                    <rect key="frame" x="471" y="25" width="100" height="30"/>
+                                                    <rect key="frame" x="511" y="25" width="60" height="30"/>
                                                     <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Y91-g1-3MT"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Y91-g1-3MT"/>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="167" id="ypP-zs-SQk"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
@@ -84,13 +84,51 @@
                                                 <constraint firstAttribute="leadingMargin" secondItem="yxQ-f8-hjA" secondAttribute="leading" id="eIV-Br-Sh6"/>
                                                 <constraint firstItem="yxQ-f8-hjA" firstAttribute="centerY" secondItem="asy-Rq-Xje" secondAttribute="centerY" id="p2S-fd-b1g"/>
                                                 <constraint firstItem="n7e-nQ-8lx" firstAttribute="leading" secondItem="XUz-U1-VNc" secondAttribute="trailing" constant="8" id="uSv-J1-D2f"/>
-                                                <constraint firstItem="XUz-U1-VNc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yxQ-f8-hjA" secondAttribute="trailing" constant="40" id="ueo-LD-ln3"/>
+                                                <constraint firstItem="XUz-U1-VNc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yxQ-f8-hjA" secondAttribute="trailing" constant="20" id="ueo-LD-ln3"/>
                                                 <constraint firstItem="n7e-nQ-8lx" firstAttribute="centerY" secondItem="asy-Rq-Xje" secondAttribute="centerY" id="zRv-iB-zZO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
+                                            <outlet property="textField" destination="XUz-U1-VNc" id="b3f-U8-lWM"/>
                                             <outlet property="titleLabel" destination="yxQ-f8-hjA" id="s97-ZA-eJw"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OwnerCell" rowHeight="80" id="HUZ-gO-qvs" customClass="OwnerOptionCell" customModule="ApartmentFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="108" width="600" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HUZ-gO-qvs" id="VSg-29-AWj">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThZ-4d-BQz">
+                                                    <rect key="frame" x="8" y="29" width="42" height="20.5"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wXK-ph-0Jh">
+                                                    <rect key="frame" x="463" y="26" width="109" height="29"/>
+                                                    <animations/>
+                                                    <segments>
+                                                        <segment title="Agent"/>
+                                                        <segment title="Owner"/>
+                                                    </segments>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="leadingMargin" secondItem="ThZ-4d-BQz" secondAttribute="leading" id="CUc-YH-II0"/>
+                                                <constraint firstItem="wXK-ph-0Jh" firstAttribute="centerY" secondItem="VSg-29-AWj" secondAttribute="centerY" id="LcW-XE-bxX"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wXK-ph-0Jh" secondAttribute="trailing" constant="20" id="WtZ-Q6-chB"/>
+                                                <constraint firstItem="ThZ-4d-BQz" firstAttribute="centerY" secondItem="VSg-29-AWj" secondAttribute="centerY" id="suX-T7-xBe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="segmentedControl" destination="wXK-ph-0Jh" id="Qoe-30-IvO"/>
+                                            <outlet property="titleLabel" destination="ThZ-4d-BQz" id="fRO-ao-au5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -108,15 +146,15 @@
                             <constraint firstAttribute="trailing" secondItem="9is-Tr-02o" secondAttribute="trailing" id="uci-Ug-g6V"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="whO-ND-wQd">
+                    <navigationItem key="navigationItem" title="Options" id="whO-ND-wQd">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="aaW-FW-U6l">
                             <connections>
-                                <segue destination="L2f-Zm-U0d" kind="unwind" unwindAction="cancelOptions:" id="qYn-Fd-Kvy"/>
+                                <segue destination="L2f-Zm-U0d" kind="unwind" identifier="Cancel" unwindAction="cancelOptions:" id="qYn-Fd-Kvy"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="aeb-OH-alK">
                             <connections>
-                                <segue destination="L2f-Zm-U0d" kind="unwind" unwindAction="doneOptions:" id="Kex-Yp-DeI"/>
+                                <segue destination="L2f-Zm-U0d" kind="unwind" identifier="Done" unwindAction="doneOptions:" id="Kex-Yp-DeI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -153,7 +191,7 @@
                     <navigationItem key="navigationItem" title="Apartments" id="Lgc-Eu-s8v">
                         <barButtonItem key="leftBarButtonItem" title="Options" id="QXJ-xT-TDC">
                             <connections>
-                                <segue destination="1LM-vu-ieA" kind="presentation" id="wdL-kV-01l"/>
+                                <segue destination="1LM-vu-ieA" kind="presentation" identifier="OpenOptions" id="wdL-kV-01l"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

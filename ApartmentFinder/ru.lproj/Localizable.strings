@@ -4,6 +4,12 @@
 /* Currency Symbol on ApartmentCell */
 "Br" = "руб.";
 
+/* Options cell title */
+"Maximum price" = "Максимальная цена";
+
+/* Options cell title */
+"Minimum price" = "Минимальная цена";
+
 /* OwnerType */
 "Owner" = "Собственник";
 

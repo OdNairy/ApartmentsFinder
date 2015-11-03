@@ -10,13 +10,13 @@ import UIKit
 import TLYShyNavBar
 
 class WebController: UIViewController, UIWebViewDelegate {
-    var loadingURLRequest : Bool = false {
+    var loadingURLRequest = false {
         willSet{
             webView.hidden = newValue
         }
     }
     @IBOutlet var webView : UIWebView!
-    var shouldHideStatusBar : Bool = false {
+    var shouldHideStatusBar = false {
         didSet{
             if shouldHideStatusBar != oldValue {
                 self.setNeedsStatusBarAppearanceUpdate()

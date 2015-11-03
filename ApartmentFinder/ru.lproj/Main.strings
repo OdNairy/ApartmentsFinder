@@ -1,3 +1,15 @@
 /* Class = "UINavigationItem"; title = "Apartments"; ObjectID = "Lgc-Eu-s8v"; */
 "Lgc-Eu-s8v.title" = "Квартиры";
 
+/* Class = "UIBarButtonItem"; title = "Options"; ObjectID = "QXJ-xT-TDC"; */
+"QXJ-xT-TDC.title" = "Настройки";
+
+/* Class = "UISegmentedControl"; wXK-ph-0Jh.segmentTitles[0] = "Agent"; ObjectID = "wXK-ph-0Jh"; */
+"wXK-ph-0Jh.segmentTitles[0]" = "Агентство";
+
+/* Class = "UISegmentedControl"; wXK-ph-0Jh.segmentTitles[1] = "Owner"; ObjectID = "wXK-ph-0Jh"; */
+"wXK-ph-0Jh.segmentTitles[1]" = "Собственник";
+
+/* Class = "UINavigationItem"; title = "Options"; ObjectID = "whO-ND-wQd"; */
+"whO-ND-wQd.title" = "Настройки";
+
