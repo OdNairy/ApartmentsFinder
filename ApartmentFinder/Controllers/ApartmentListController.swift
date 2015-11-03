@@ -25,6 +25,7 @@ func documentsDirectoryPath(filename: String) -> String {
 class ApartmentListController: UICollectionViewController {
     var webController : WebController?
     var apartments = [Apartment]()
+    lazy var refreshControl = UIRefreshControl()
     
     var optionsData: OptionsData = {
         // Default value initializer
@@ -55,6 +56,8 @@ class ApartmentListController: UICollectionViewController {
             UINib(nibName: "ApartmentCell", bundle: nil),
             forCellWithReuseIdentifier: reuseIdentifier)
         
+        refreshControl.addTarget(self, action: Selector("updateApartmentsData"), forControlEvents: .ValueChanged)
+        self.collectionView?.addSubview(refreshControl)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -100,6 +103,7 @@ class ApartmentListController: UICollectionViewController {
         })
         return task?.continueWithExecutor(BFExecutor.mainThreadExecutor(), withBlock: { (task) -> AnyObject! in
             self.collectionView?.reloadData()
+            self.refreshControl.endRefreshing()
             return true
         })
     }
