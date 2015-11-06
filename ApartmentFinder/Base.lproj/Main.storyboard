@@ -108,12 +108,13 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wXK-ph-0Jh" customClass="UnselectableSegmentedControl" customModule="ApartmentFinder" customModuleProvider="target">
-                                                    <rect key="frame" x="463" y="26" width="109" height="29"/>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wXK-ph-0Jh">
+                                                    <rect key="frame" x="436" y="26" width="136" height="29"/>
                                                     <animations/>
                                                     <segments>
                                                         <segment title="Agent"/>
                                                         <segment title="Owner"/>
+                                                        <segment title="All"/>
                                                     </segments>
                                                 </segmentedControl>
                                             </subviews>

@@ -21,7 +21,7 @@ class OptionsData : NSObject, NSSecureCoding {
     enum Owner : Int {
         case Agent = 0
         case Owner = 1
-        case All = -1
+        case All = 2
     }
     
     
