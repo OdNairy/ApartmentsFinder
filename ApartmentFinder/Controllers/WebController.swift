@@ -53,6 +53,13 @@ class WebController: UIViewController, UIWebViewDelegate {
     func webViewDidFinishLoad(webView: UIWebView) {
         loadingURLRequest = false
     }
+    
+    @IBAction func share(){
+        guard let url = self.webView.request?.URL else {
+            return
+        }
+        UIApplication.sharedApplication().openURL(url)
+    }
 
     /*
     // MARK: - Navigation

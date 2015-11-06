@@ -108,7 +108,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wXK-ph-0Jh">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wXK-ph-0Jh" customClass="UnselectableSegmentedControl" customModule="ApartmentFinder" customModuleProvider="target">
                                                     <rect key="frame" x="463" y="26" width="109" height="29"/>
                                                     <animations/>
                                                     <segments>
@@ -200,7 +200,7 @@
             </objects>
             <point key="canvasLocation" x="1448" y="93"/>
         </scene>
-        <!--Web Controller-->
+        <!--Apartment-->
         <scene sceneID="GTh-5j-4ex">
             <objects>
                 <viewController storyboardIdentifier="WebController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tHZ-4p-iEU" customClass="WebController" customModule="ApartmentFinder" customModuleProvider="target" sceneMemberID="viewController">
@@ -230,6 +230,14 @@
                             <constraint firstItem="1SH-Sk-nv2" firstAttribute="top" secondItem="J7i-sn-ahK" secondAttribute="bottom" id="kcJ-G3-vPt"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Apartment" id="5jT-Tk-kDm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="C83-wI-HBk">
+                            <connections>
+                                <action selector="share" destination="tHZ-4p-iEU" id="cbb-Q7-uRA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="webView" destination="J7i-sn-ahK" id="CGB-3U-ycP"/>
                     </connections>
