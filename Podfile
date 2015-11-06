@@ -6,3 +6,5 @@ inhibit_all_warnings!
 pod 'Parse'
 pod 'PINRemoteImage', :inhibit_warnings => true
 pod 'TLYShyNavBar'
+pod 'Dollar'
+pod 'Cent'
