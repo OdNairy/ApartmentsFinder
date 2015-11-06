@@ -8,3 +8,4 @@ pod 'PINRemoteImage', :inhibit_warnings => true
 pod 'TLYShyNavBar'
 pod 'Dollar'
 pod 'Cent'
+pod 'DateTools'
