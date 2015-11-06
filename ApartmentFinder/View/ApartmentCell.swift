@@ -9,6 +9,7 @@
 import UIKit
 import PINRemoteImage
 
+
 class ApartmentCell: UICollectionViewCell {
     // Highest subviews in hierarchy
     @IBOutlet weak var previewView: UIImageView!
@@ -54,6 +55,9 @@ class ApartmentCell: UICollectionViewCell {
         
         self.upTextLabel.text = nil
         self.ownerView.ownerType = apartment.owner ? .Owner : .Agent;
+        
+        self.roomCountlabel.text = apartment.roomsText()
+        
         
         guard let url = NSURL(string: apartment.photoUrl) else {
             return

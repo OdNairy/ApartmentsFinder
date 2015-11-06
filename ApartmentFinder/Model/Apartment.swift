@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Cent
 
 
 class Apartment: PFObject, PFSubclassing {
@@ -29,8 +30,22 @@ class Apartment: PFObject, PFSubclassing {
     @NSManaged var url : String
     @NSManaged var photoUrl : String
     @NSManaged var owner : Bool
+    @NSManaged var rentType : String
     
     class func findAll() -> BFTask {
         return Apartment.query()!.findObjectsInBackground()
+    }
+    
+    func roomsText() -> String {
+        var roomsText = NSLocalizedString("room", comment: "Apartment rent type with 1 room only not full flat")
+        if self.rentType =~ "_room" {
+            let roomCountText = Regex.init("(\\d+)_room").groups(self.rentType).first()!.last()!
+            
+            if let roomsCount = Int(roomCountText) {
+                let roomsTextSuffix = roomsCount > 2 ? "s" : ""
+                roomsText = "\(roomsCount) room\(roomsTextSuffix)"
+            }
+        }
+        return roomsText
     }
 }
