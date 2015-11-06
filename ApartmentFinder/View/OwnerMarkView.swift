@@ -57,7 +57,7 @@ class OwnerMarkView: UIView {
             views: ["label":label])
         self.addConstraints(vContraints)
         
-        let hContraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-[label]-|",
+        let hContraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|[label]-|",
             options: NSLayoutFormatOptions(rawValue: 0),
             metrics: nil,
             views: ["label":label])

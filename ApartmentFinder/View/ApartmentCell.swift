@@ -8,6 +8,7 @@
 
 import UIKit
 import PINRemoteImage
+import Cent
 
 
 class ApartmentCell: UICollectionViewCell {
@@ -21,6 +22,7 @@ class ApartmentCell: UICollectionViewCell {
     @IBOutlet weak var byrPriceLabel: UILabel!
     @IBOutlet weak var roomCountlabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
 
     static var formatter = NSNumberFormatter()
     var numberFormatter : NSNumberFormatter {
@@ -57,6 +59,13 @@ class ApartmentCell: UICollectionViewCell {
         self.ownerView.ownerType = apartment.owner ? .Owner : .Agent;
         
         self.roomCountlabel.text = apartment.roomsText()
+        do {
+            let dateFmt = NSDateFormatter()
+            dateFmt.timeZone = NSTimeZone.defaultTimeZone()
+            dateFmt.dateFormat = "HH:mm dd.MM.yy"
+            
+            self.timeLabel.text = dateFmt.stringFromDate(apartment.apartmentAddedAt)
+        }
         
         
         guard let url = NSURL(string: apartment.photoUrl) else {

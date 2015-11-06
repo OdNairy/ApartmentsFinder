@@ -31,6 +31,7 @@ class Apartment: PFObject, PFSubclassing {
     @NSManaged var photoUrl : String
     @NSManaged var owner : Bool
     @NSManaged var rentType : String
+    @NSManaged var apartmentAddedAt : Date
     
     class func findAll() -> BFTask {
         return Apartment.query()!.findObjectsInBackground()
@@ -40,7 +41,6 @@ class Apartment: PFObject, PFSubclassing {
         var roomsText = NSLocalizedString("room", comment: "Apartment rent type with 1 room only not full flat")
         if self.rentType =~ "_room" {
             let roomCountText = Regex.init("(\\d+)_room").groups(self.rentType).first()!.last()!
-            
             if let roomsCount = Int(roomCountText) {
                 let roomsTextSuffix = roomsCount > 2 ? "s" : ""
                 roomsText = "\(roomsCount) room\(roomsTextSuffix)"
