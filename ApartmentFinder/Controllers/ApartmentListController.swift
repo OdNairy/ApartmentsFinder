@@ -78,7 +78,6 @@ class ApartmentListController: UICollectionViewController {
     
     func updateApartmentsData() -> BFTask? {
         let query = Apartment.query()
-        query?.limit = 50
         query?.orderByDescending("onlinerID")
         
         if let minPrice = optionsData.minimumPrice {
