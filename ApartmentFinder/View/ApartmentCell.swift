@@ -59,13 +59,7 @@ class ApartmentCell: UICollectionViewCell {
         self.ownerView.ownerType = apartment.owner ? .Owner : .Agent;
         
         self.roomCountlabel.text = apartment.roomsText()
-        do {
-            let dateFmt = NSDateFormatter()
-            dateFmt.timeZone = NSTimeZone.defaultTimeZone()
-            dateFmt.dateFormat = "HH:mm dd.MM.yy"
-            
-            self.timeLabel.text = dateFmt.stringFromDate(apartment.apartmentAddedAt)
-        }
+        self.timeLabel.text = apartment.timeAgoText()
         
         
         guard let url = NSURL(string: apartment.photoUrl) else {

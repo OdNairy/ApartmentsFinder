@@ -7,9 +7,10 @@
 //
 
 import UIKit
+
 import Parse
 import Cent
-
+import DateTools
 
 class Apartment: PFObject, PFSubclassing {
     override class func initialize(){
@@ -47,5 +48,15 @@ class Apartment: PFObject, PFSubclassing {
             }
         }
         return roomsText
+    }
+    
+    func timeAgoText() -> String {
+//            let dateFmt = NSDateFormatter()
+//            dateFmt.timeZone = NSTimeZone.defaultTimeZone()
+//            dateFmt.dateFormat = "HH:mm dd.MM.yy"
+//
+//            self.timeLabel.text = dateFmt.stringFromDate(apartment.apartmentAddedAt)
+
+        return apartmentAddedAt.timeAgoSinceNow()
     }
 }
