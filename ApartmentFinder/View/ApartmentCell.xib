@@ -37,7 +37,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guL-i4-oeY" userLabel="UpLabel">
-                                <rect key="frame" x="40" y="0.0" width="42" height="21"/>
+                                <rect key="frame" x="40" y="0.0" width="42" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -50,14 +50,14 @@
                         <rect key="frame" x="8" y="169" width="145" height="65"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="290 $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbW-Tc-cfM">
-                                <rect key="frame" x="0.0" y="0.0" width="44" height="20"/>
+                                <rect key="frame" x="0.0" y="0.0" width="43.5" height="19.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 986 300 руб." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbW-sY-7zS">
-                                <rect key="frame" x="0.0" y="22" width="142" height="26"/>
+                                <rect key="frame" x="0.0" y="21.5" width="141.5" height="25.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -73,7 +73,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Григория Ширмы, 7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDW-SR-vqg">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Григория Ширмы, 7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="oDW-SR-vqg">
                                         <rect key="frame" x="21" y="0.0" width="124" height="16"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -96,6 +96,7 @@
                 <constraint firstAttribute="trailing" secondItem="QPc-7Y-3Jn" secondAttribute="trailing" id="7OA-p5-QBA"/>
                 <constraint firstAttribute="trailing" secondItem="nD3-Ia-73F" secondAttribute="trailing" id="Agk-vc-DTx"/>
                 <constraint firstAttribute="leadingMargin" secondItem="H79-5l-oYK" secondAttribute="leading" id="C1O-Ls-Mad"/>
+                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="JUO-no-Peb" secondAttribute="trailing" id="Es9-gG-6Hg"/>
                 <constraint firstItem="bQb-Ho-UIx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="H2p-OB-gHr"/>
                 <constraint firstAttribute="leadingMargin" secondItem="JUO-no-Peb" secondAttribute="leading" id="UHC-nG-uKD"/>
                 <constraint firstItem="QPc-7Y-3Jn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="UTL-x7-uKg"/>
