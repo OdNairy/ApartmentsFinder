@@ -43,11 +43,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <!--Include to allow all connections (DANGER)-->
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>MGLMapboxAccessToken</key>
+	<string>sk.eyJ1Ijoib2RuYXJ5IiwiYSI6ImNpZ3BhM2ttNjAwb2p1c20xa2M1c2F1azkifQ.62nu37mj2JUOus6Vcrnp4g</string>
 </dict>
 </plist>

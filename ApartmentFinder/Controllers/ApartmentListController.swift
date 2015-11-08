@@ -181,16 +181,28 @@ class ApartmentListController: UICollectionViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard (segue.identifier != nil) else {return}
+        
+        switch (segue.identifier!){
+            case "OpenOptions":
+                let navigationController = segue.destinationViewController as! UINavigationController
+                guard ((navigationController.topViewController?.isKindOfClass(OptionsController.self)) != nil), let optionsController = navigationController.topViewController as? OptionsController else {
+                    return
+                    
+                }
+                optionsController.optionsData = self.optionsData
+                break;
+            case "Map":
+                let navigationController = segue.destinationViewController as! UINavigationController
+                let mapController = navigationController.topViewController as! MapController
+                mapController.apartments = self.apartments
+                break;
+        default: break;
+        }
         guard segue.identifier == "OpenOptions" else {
             return
         }
-        let navigationController = segue.destinationViewController as! UINavigationController
-        guard ((navigationController.topViewController?.isKindOfClass(OptionsController.self)) != nil), let optionsController = navigationController.topViewController as? OptionsController else {
-            return
-            
-        }
-
-        optionsController.optionsData = self.optionsData
+        
     }
 //    collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     

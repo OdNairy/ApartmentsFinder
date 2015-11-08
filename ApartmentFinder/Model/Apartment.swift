@@ -33,6 +33,7 @@ class Apartment: PFObject, PFSubclassing {
     @NSManaged var owner : Bool
     @NSManaged var rentType : String
     @NSManaged var apartmentAddedAt : Date
+    @NSManaged var location : PFGeoPoint
     
     class func findAll() -> BFTask {
         return Apartment.query()!.findObjectsInBackground()

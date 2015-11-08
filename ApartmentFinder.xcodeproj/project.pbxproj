@@ -12,6 +12,8 @@
 		FE13FF0F1BDFFF90001F61C5 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13FF0E1BDFFF90001F61C5 /* WebController.swift */; };
 		FE13FF111BE0D24C001F61C5 /* OptionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE13FF101BE0D24C001F61C5 /* OptionsController.swift */; };
 		FE3170461BD3900C007B16A6 /* OwnerMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEECBF491BD383E500D5DC72 /* OwnerMarkView.swift */; };
+		FE7005A41BEE583A00404BD4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FE7005A31BEE583A00404BD4 /* Settings.bundle */; };
+		FE7005A61BEE589E00404BD4 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7005A51BEE589E00404BD4 /* MapController.swift */; };
 		FE71756C1BD434C700B21B4D /* ApartmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71756A1BD434C700B21B4D /* ApartmentCell.swift */; };
 		FE71756D1BD434C700B21B4D /* ApartmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE71756B1BD434C700B21B4D /* ApartmentCell.xib */; };
 		FE8C41E01BD8D5DD00CF6BFA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE8C41E21BD8D5DD00CF6BFA /* Localizable.strings */; };
@@ -37,6 +39,8 @@
 		FE13FF0D1BDFC607001F61C5 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FE13FF0E1BDFFF90001F61C5 /* WebController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		FE13FF101BE0D24C001F61C5 /* OptionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsController.swift; sourceTree = "<group>"; };
+		FE7005A31BEE583A00404BD4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		FE7005A51BEE589E00404BD4 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		FE71756A1BD434C700B21B4D /* ApartmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApartmentCell.swift; sourceTree = "<group>"; };
 		FE71756B1BD434C700B21B4D /* ApartmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApartmentCell.xib; sourceTree = "<group>"; };
 		FE8C41E11BD8D5DD00CF6BFA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -88,11 +92,12 @@
 		FE13FF071BDFC31E001F61C5 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				FE7005A31BEE583A00404BD4 /* Settings.bundle */,
+				FEECBF231BD3748000D5DC72 /* Info.plist */,
 				FE13FF0C1BDFC607001F61C5 /* InfoPlist.strings */,
 				FE8C41E21BD8D5DD00CF6BFA /* Localizable.strings */,
 				FEECBF1E1BD3748000D5DC72 /* Assets.xcassets */,
 				FEECBF201BD3748000D5DC72 /* LaunchScreen.storyboard */,
-				FEECBF231BD3748000D5DC72 /* Info.plist */,
 				FEECBF1B1BD3748000D5DC72 /* ApartmentFinder.xcdatamodeld */,
 			);
 			name = "Support Files";
@@ -153,6 +158,7 @@
 				FEECBF451BD37A7100D5DC72 /* ApartmentListController.swift */,
 				FE13FF0E1BDFFF90001F61C5 /* WebController.swift */,
 				FE13FF101BE0D24C001F61C5 /* OptionsController.swift */,
+				FE7005A51BEE589E00404BD4 /* MapController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 				FEECBF1F1BD3748000D5DC72 /* Assets.xcassets in Resources */,
 				FE71756D1BD434C700B21B4D /* ApartmentCell.xib in Resources */,
 				FEECBF1A1BD3748000D5DC72 /* Main.storyboard in Resources */,
+				FE7005A41BEE583A00404BD4 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEECBF461BD37A7100D5DC72 /* ApartmentListController.swift in Sources */,
+				FE7005A61BEE589E00404BD4 /* MapController.swift in Sources */,
 				FEECBF1D1BD3748000D5DC72 /* ApartmentFinder.xcdatamodeld in Sources */,
 				FED8FF781BE5242000FE02FD /* OwnerOptionCell.swift in Sources */,
 				FE13FF111BE0D24C001F61C5 /* OptionsController.swift in Sources */,
@@ -368,6 +376,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -413,6 +422,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
