@@ -18,11 +18,13 @@ class ApartmentCell: UICollectionViewCell {
     @IBOutlet weak var ownerView: OwnerMarkView!
     @IBOutlet weak var upTextLabel : UILabel!
     
-    @IBOutlet weak var usdPriceLabel: UILabel!
-    @IBOutlet weak var byrPriceLabel: UILabel!
+    @IBOutlet weak var normalPriorityCurrencyLabel: UILabel!
+    @IBOutlet weak var highPriorityCurrencyLabel: UILabel!
     @IBOutlet weak var roomCountlabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    
+    var currencyPriority = OptionsData.Currency.USD
 
     static var formatter = NSNumberFormatter()
     var numberFormatter : NSNumberFormatter {
@@ -48,11 +50,10 @@ class ApartmentCell: UICollectionViewCell {
         formatter.currencySymbol = "$"
         formatter.currencyGroupingSeparator = " "
         formatter.maximumFractionDigits = 0;
-//        formatter.currencyCode = "USD"
         
-        self.usdPriceLabel.text = formatter.stringFromNumber(NSNumber(integer: apartment.priceUSD))
+        self.highPriorityCurrencyLabel.text = formatter.stringFromNumber(NSNumber(integer: apartment.priceUSD))
         formatter.currencySymbol = NSLocalizedString("Br", comment: "Currency Symbol on ApartmentCell")
-        self.byrPriceLabel.text = formatter.stringFromNumber(NSNumber(integer: apartment.priceBYR))
+        self.normalPriorityCurrencyLabel.text = formatter.stringFromNumber(NSNumber(integer: apartment.priceBYR))
         self.addressLabel.text = apartment.userAddress
         
         self.upTextLabel.text = nil
@@ -80,7 +81,7 @@ class ApartmentCell: UICollectionViewCell {
     
     func format(number: NSNumber) -> String -> String? {
         
-        return {    currencyCode in
+        return { currencyCode in
             self.numberFormatter.currencyCode = currencyCode
             return self.numberFormatter.stringFromNumber(number)
         }

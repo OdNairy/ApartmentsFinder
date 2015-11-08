@@ -9,7 +9,7 @@
 import UIKit
 import TLYShyNavBar
 
-/** Improve by [iOS 7 Translucent Modal View Controller](http://stackoverflow.com/a/22181911/887401)
+/** TODO: Improve by [iOS 7 Translucent Modal View Controller](http://stackoverflow.com/a/22181911/887401)
 */
 class OptionsController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -85,14 +85,7 @@ class OptionsController: UIViewController, UITableViewDataSource, UITableViewDel
         case 2:
             let ownerCell = cell as! OwnerOptionCell
             ownerCell.segmentedControl.selectedSegmentIndex = self.optionsData.owner.rawValue
-//            switch (self.optionsData.owner){
-//            case .All:
-//                ownerCell.segmentedControl.selectedSegmentIndex = -1
-//            case .Agent:
-//                ownerCell.segmentedControl.selectedSegmentIndex = 0
-//            case .Owner:
-//                ownerCell.segmentedControl.selectedSegmentIndex = 1
-//            }
+
             
             break;
         default:

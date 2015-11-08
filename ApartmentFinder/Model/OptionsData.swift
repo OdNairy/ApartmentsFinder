@@ -24,10 +24,16 @@ class OptionsData : NSObject, NSSecureCoding {
         case All = 2
     }
     
+    enum Currency : Int {
+        case BYR
+        case USD
+    }
+    
     
     var minimumPrice : Int?
     var maximumPrice : Int?
     var owner = Owner.All
+    var priorityCurrency = Currency.USD
     
     override init(){
         

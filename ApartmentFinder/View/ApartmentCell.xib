@@ -127,13 +127,13 @@
             <size key="customSize" width="372" height="242"/>
             <connections>
                 <outlet property="addressLabel" destination="oDW-SR-vqg" id="Mq6-9n-RXh"/>
-                <outlet property="byrPriceLabel" destination="zbW-sY-7zS" id="5WR-25-CTV"/>
+                <outlet property="highPriorityCurrencyLabel" destination="zbW-sY-7zS" id="KMy-Vr-uaD"/>
+                <outlet property="normalPriorityCurrencyLabel" destination="xbW-Tc-cfM" id="Xir-uX-lCo"/>
                 <outlet property="ownerView" destination="Mhu-yW-HZl" id="lJ7-EQ-gBi"/>
                 <outlet property="previewView" destination="bQb-Ho-UIx" id="HXt-IM-XrG"/>
                 <outlet property="roomCountlabel" destination="nyP-ta-UZ1" id="5tc-KC-dSm"/>
                 <outlet property="timeLabel" destination="nUr-U8-q56" id="jG3-hc-tU7"/>
                 <outlet property="upTextLabel" destination="guL-i4-oeY" id="oop-m8-NKX"/>
-                <outlet property="usdPriceLabel" destination="xbW-Tc-cfM" id="ZCa-aA-f75"/>
             </connections>
             <point key="canvasLocation" x="-583" y="18"/>
         </collectionViewCell>
