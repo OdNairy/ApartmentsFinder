@@ -29,11 +29,22 @@ class OptionsData : NSObject, NSSecureCoding {
         case USD
     }
     
+    enum ApartmentType : Int {
+        case NotDeterminated = -1
+        case room = 0
+        case oneRoom
+        case twoRooms
+        case threeRooms
+        case fourAndMoreRooms
+        case All
+    }
+    
     
     var minimumPrice : Int?
     var maximumPrice : Int?
     var owner = Owner.All
     var priorityCurrency = Currency.USD
+    var apartmentType = ApartmentType.NotDeterminated
     
     override init(){
         
@@ -48,6 +59,9 @@ class OptionsData : NSObject, NSSecureCoding {
         minimumPrice = aDecoder.decodeIntegerForKeyOptional("minimumPrice")
         maximumPrice = aDecoder.decodeIntegerForKeyOptional("maximumPrice")
         owner = Owner(rawValue: aDecoder.decodeIntegerForKey("owner"))!
+        if let apartmentTypeInt = aDecoder.decodeIntegerForKeyOptional("apartmentType") {
+            apartmentType = ApartmentType(rawValue: apartmentTypeInt)!
+        }
     }
     
     override func isEqual(object: AnyObject?) -> Bool {
@@ -69,5 +83,7 @@ class OptionsData : NSObject, NSSecureCoding {
             aCoder.encodeInteger(maximumPrice, forKey: "maximumPrice")
         }
         aCoder.encodeInteger(owner.rawValue, forKey: "owner")
+        aCoder.encodeInteger(apartmentType.rawValue, forKey: "apartmentType")
+        
     }
 }

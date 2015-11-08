@@ -14,6 +14,7 @@
 		FE3170461BD3900C007B16A6 /* OwnerMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEECBF491BD383E500D5DC72 /* OwnerMarkView.swift */; };
 		FE7005A41BEE583A00404BD4 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FE7005A31BEE583A00404BD4 /* Settings.bundle */; };
 		FE7005A61BEE589E00404BD4 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7005A51BEE589E00404BD4 /* MapController.swift */; };
+		FE7005A81BEF3B3200404BD4 /* ApartmentTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7005A71BEF3B3200404BD4 /* ApartmentTypeCell.swift */; };
 		FE71756C1BD434C700B21B4D /* ApartmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71756A1BD434C700B21B4D /* ApartmentCell.swift */; };
 		FE71756D1BD434C700B21B4D /* ApartmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE71756B1BD434C700B21B4D /* ApartmentCell.xib */; };
 		FE8C41E01BD8D5DD00CF6BFA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE8C41E21BD8D5DD00CF6BFA /* Localizable.strings */; };
@@ -41,6 +42,7 @@
 		FE13FF101BE0D24C001F61C5 /* OptionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsController.swift; sourceTree = "<group>"; };
 		FE7005A31BEE583A00404BD4 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		FE7005A51BEE589E00404BD4 /* MapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		FE7005A71BEF3B3200404BD4 /* ApartmentTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApartmentTypeCell.swift; sourceTree = "<group>"; };
 		FE71756A1BD434C700B21B4D /* ApartmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApartmentCell.swift; sourceTree = "<group>"; };
 		FE71756B1BD434C700B21B4D /* ApartmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApartmentCell.xib; sourceTree = "<group>"; };
 		FE8C41E11BD8D5DD00CF6BFA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -141,9 +143,9 @@
 		FEECBF131BD3748000D5DC72 /* ApartmentFinder */ = {
 			isa = PBXGroup;
 			children = (
+				FED185AC1BD428EE00CFB28B /* Model */,
 				FEECBF471BD37A7600D5DC72 /* Controllers */,
 				FEECBF481BD383A500D5DC72 /* View */,
-				FED185AC1BD428EE00CFB28B /* Model */,
 				FEE03E371BEA957700A7813B /* Helpers */,
 				FEECBF181BD3748000D5DC72 /* Main.storyboard */,
 				FEECBF141BD3748000D5DC72 /* AppDelegate.swift */,
@@ -171,6 +173,7 @@
 				FE71756B1BD434C700B21B4D /* ApartmentCell.xib */,
 				FE9C28D91BE0EEBE0095E950 /* TextFieldOptionCell.swift */,
 				FED8FF771BE5242000FE02FD /* OwnerOptionCell.swift */,
+				FE7005A71BEF3B3200404BD4 /* ApartmentTypeCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE7005A81BEF3B3200404BD4 /* ApartmentTypeCell.swift in Sources */,
 				FEECBF461BD37A7100D5DC72 /* ApartmentListController.swift in Sources */,
 				FE7005A61BEE589E00404BD4 /* MapController.swift in Sources */,
 				FEECBF1D1BD3748000D5DC72 /* ApartmentFinder.xcdatamodeld in Sources */,

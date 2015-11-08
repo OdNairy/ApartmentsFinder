@@ -77,30 +77,41 @@ class ApartmentListController: UICollectionViewController {
     }
     
     func updateApartmentsData() -> BFTask? {
-        let query = Apartment.query()
-        query?.orderByDescending("onlinerID")
+        guard let query = Apartment.query() else {return nil}
+        query.orderByDescending("onlinerID")
         
         if let minPrice = optionsData.minimumPrice {
-            query?.whereKey("priceUSD", greaterThanOrEqualTo: minPrice)
+            query.whereKey("priceUSD", greaterThanOrEqualTo: minPrice)
         }
         if let maxPrice = optionsData.maximumPrice {
-            query?.whereKey("priceUSD", lessThanOrEqualTo: maxPrice)
+            query.whereKey("priceUSD", lessThanOrEqualTo: maxPrice)
         }
-            switch (optionsData.owner) {
-            case .All:
-                break;
-            case .Agent:
-                query?.whereKey("owner", equalTo: false)
-            case .Owner:
-                query?.whereKey("owner", equalTo: true)
-            }
+        switch (optionsData.owner) {
+        case .All:
+            break;
+        case .Agent:
+            query.whereKey("owner", equalTo: false)
+        case .Owner:
+            query.whereKey("owner", equalTo: true)
+        }
         
-        var task = query?.findObjectsInBackground()
-        task = task!.continueWithSuccessBlock({ (task) -> AnyObject! in
+        switch(optionsData.apartmentType){
+        case .room: query.whereKey("rentType", equalTo: "room")
+        case .oneRoom: query.whereKey("rentType", equalTo: "1_room")
+        case .twoRooms: query.whereKey("rentType", equalTo: "2_rooms")
+        case .threeRooms: query.whereKey("rentType", equalTo: "3_rooms")
+        case .fourAndMoreRooms: query.whereKey("rentType", notContainedIn: ["room","1_room","2_rooms","3_rooms"])
+        case .All: break
+        default:   break
+        }
+        
+        
+        var task = query.findObjectsInBackground()
+        task = task.continueWithSuccessBlock({ (task) -> AnyObject! in
             self.apartments = task.result as! [Apartment]
             return true
         })
-        return task?.continueWithExecutor(BFExecutor.mainThreadExecutor(), withBlock: { (task) -> AnyObject! in
+        return task.continueWithExecutor(BFExecutor.mainThreadExecutor(), withBlock: { (task) -> AnyObject! in
             self.collectionView?.reloadData()
             self.refreshControl.endRefreshing()
             return true

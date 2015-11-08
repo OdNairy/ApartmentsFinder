@@ -39,7 +39,7 @@
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="UM0-ad-f9d">
-                                    <rect key="frame" x="0.0" y="188" width="600" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="268" width="600" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <animations/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -101,15 +101,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThZ-4d-BQz">
-                                                    <rect key="frame" x="8" y="29" width="42" height="20.5"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wXK-ph-0Jh">
-                                                    <rect key="frame" x="436" y="26" width="136" height="29"/>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wXK-ph-0Jh">
+                                                    <rect key="frame" x="428" y="43" width="164" height="29"/>
                                                     <animations/>
                                                     <segments>
                                                         <segment title="Agent"/>
@@ -117,19 +110,69 @@
                                                         <segment title="All"/>
                                                     </segments>
                                                 </segmentedControl>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThZ-4d-BQz">
+                                                    <rect key="frame" x="8" y="8" width="89" height="20.5"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstAttribute="leadingMargin" secondItem="ThZ-4d-BQz" secondAttribute="leading" id="CUc-YH-II0"/>
-                                                <constraint firstItem="wXK-ph-0Jh" firstAttribute="centerY" secondItem="VSg-29-AWj" secondAttribute="centerY" id="LcW-XE-bxX"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="wXK-ph-0Jh" secondAttribute="trailing" constant="20" id="WtZ-Q6-chB"/>
-                                                <constraint firstItem="ThZ-4d-BQz" firstAttribute="centerY" secondItem="VSg-29-AWj" secondAttribute="centerY" id="suX-T7-xBe"/>
+                                                <constraint firstItem="ThZ-4d-BQz" firstAttribute="leading" secondItem="VSg-29-AWj" secondAttribute="leadingMargin" id="CS0-iA-Ef2"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wXK-ph-0Jh" secondAttribute="bottom" id="Lxp-P5-BXt"/>
+                                                <constraint firstItem="wXK-ph-0Jh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VSg-29-AWj" secondAttribute="leadingMargin" id="Wlq-uq-0bY"/>
+                                                <constraint firstItem="wXK-ph-0Jh" firstAttribute="trailing" secondItem="VSg-29-AWj" secondAttribute="trailingMargin" id="X3T-2a-zfW"/>
+                                                <constraint firstItem="ThZ-4d-BQz" firstAttribute="top" secondItem="VSg-29-AWj" secondAttribute="topMargin" id="jY2-rH-wRc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
                                             <outlet property="segmentedControl" destination="wXK-ph-0Jh" id="Qoe-30-IvO"/>
                                             <outlet property="titleLabel" destination="ThZ-4d-BQz" id="fRO-ao-au5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FlatTypeCell" rowHeight="80" id="E7x-bJ-AHy" customClass="ApartmentTypeCell" customModule="ApartmentFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="188" width="600" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E7x-bJ-AHy" id="E64-pF-z2s">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Rooms type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQD-LH-hYX">
+                                                    <rect key="frame" x="8" y="8" width="91.5" height="20.5"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="C9r-JF-EK1">
+                                                    <rect key="frame" x="311" y="38" width="281" height="29"/>
+                                                    <animations/>
+                                                    <segments>
+                                                        <segment title="room"/>
+                                                        <segment title="1"/>
+                                                        <segment title="2"/>
+                                                        <segment title="3"/>
+                                                        <segment title="4+"/>
+                                                        <segment title="All"/>
+                                                    </segments>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="leadingMargin" secondItem="CQD-LH-hYX" secondAttribute="leading" id="RWe-4z-nEo"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="C9r-JF-EK1" secondAttribute="trailing" id="Snz-mn-GxX"/>
+                                                <constraint firstItem="C9r-JF-EK1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="E64-pF-z2s" secondAttribute="leadingMargin" id="V4c-Uu-MAC"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="C9r-JF-EK1" secondAttribute="bottom" constant="5.5" id="hF1-Iu-F4q"/>
+                                                <constraint firstAttribute="topMargin" secondItem="CQD-LH-hYX" secondAttribute="top" id="yCd-T5-j4d"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="apartmentTypeSegment" destination="C9r-JF-EK1" id="Yw9-Ov-gpb"/>
+                                            <outlet property="titleLabel" destination="CQD-LH-hYX" id="6qW-S8-c9K"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

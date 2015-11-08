@@ -13,11 +13,7 @@ import TLYShyNavBar
 */
 class OptionsController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var optionsData = OptionsData() {
-        didSet{
-            print(optionsData)
-        }
-    }
+    var optionsData = OptionsData()
     @IBOutlet var tableView : UITableView!
     
     override func viewDidLoad() {
@@ -33,6 +29,8 @@ class OptionsController: UIViewController, UITableViewDataSource, UITableViewDel
             return "TextFieldCell"
         case 2:
             return "OwnerCell"
+        case 3:
+            return "FlatTypeCell"
         default:
             return ""
         }
@@ -40,28 +38,30 @@ class OptionsController: UIViewController, UITableViewDataSource, UITableViewDel
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "Done" {
-            
-            let minimumPriceCell = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! TextFieldOptionCell
-            let minimumPrice = minimumPriceCell.textField.text
+            let minPriceCell = minimumPriceCell()
+            let minimumPrice = minPriceCell.textField.text
             if ((minimumPrice?.characters.count) != nil) {
                 self.optionsData.minimumPrice = Int(minimumPrice!)
             }
             
-            let maximumPriceCell = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 0)) as! TextFieldOptionCell
-            let maximumPrice = maximumPriceCell.textField.text
+            let maxPriceCell = maximumPriceCell()
+            let maximumPrice = maxPriceCell.textField.text
             if ((maximumPrice?.characters.count) != nil) {
                 self.optionsData.maximumPrice = Int(maximumPrice!)
             }
             
-            let ownerCell = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 2, inSection: 0)) as! OwnerOptionCell
-            self.optionsData.owner = OptionsData.Owner(rawValue: ownerCell.segmentedControl.selectedSegmentIndex)!
+            let ownerOptionCell = ownerCell()
+            self.optionsData.owner = OptionsData.Owner(rawValue: ownerOptionCell.segmentedControl.selectedSegmentIndex)!
+
+            let flatTypeCell = apartmentTypeCell()
+            self.optionsData.apartmentType = OptionsData.ApartmentType(rawValue: flatTypeCell.apartmentTypeSegment.selectedSegmentIndex)!
         }
     }
     
     // MARK: - UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -74,40 +74,39 @@ class OptionsController: UIViewController, UITableViewDataSource, UITableViewDel
             if let minimumPrice = self.optionsData.minimumPrice {
                 textFieldCell.textField.text = String(minimumPrice)
             }
-            break;
         case 1:
             let textFieldCell = cell as! TextFieldOptionCell
             textFieldCell.titleLabel.text = NSLocalizedString("Maximum price", comment: "Options cell title")
             if let maximumPrice = self.optionsData.maximumPrice {
                 textFieldCell.textField.text = String(maximumPrice)
             }
-            break;
         case 2:
             let ownerCell = cell as! OwnerOptionCell
             ownerCell.segmentedControl.selectedSegmentIndex = self.optionsData.owner.rawValue
-
-            
-            break;
+        case 3:
+            let apartmentTypeCell = cell as! ApartmentTypeCell
+            apartmentTypeCell.apartmentTypeSegment.selectedSegmentIndex = self.optionsData.apartmentType.rawValue
         default:
             break;
         }
 
-        
         return cell
     }
-    
-    
 
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func minimumPriceCell() -> TextFieldOptionCell {
+        return self.tableView.visibleCells[0] as! TextFieldOptionCell
     }
-    */
-
+    
+    func maximumPriceCell() -> TextFieldOptionCell {
+        return self.tableView.visibleCells[1] as! TextFieldOptionCell
+    }
+    
+    func ownerCell() -> OwnerOptionCell {
+        return self.tableView.visibleCells[2] as! OwnerOptionCell
+    }
+    
+    func apartmentTypeCell() -> ApartmentTypeCell {
+        return self.tableView.visibleCells[3] as! ApartmentTypeCell
+    }
 }
