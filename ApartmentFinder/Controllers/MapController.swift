@@ -11,6 +11,8 @@ import Mapbox
 
 class MapController: UIViewController, MGLMapViewDelegate {
     @IBOutlet var mapView : MGLMapView!
+    var webController : WebController?
+    
     var apartments = [Apartment](){
         didSet{
             updateAnnotations()
@@ -32,22 +34,39 @@ class MapController: UIViewController, MGLMapViewDelegate {
         
         mapView.addAnnotation(annotation)
 
+        
+        self.webController = self.storyboard?.instantiateViewControllerWithIdentifier("WebController") as? WebController
+        self.webController?.loadViewIfNeeded()
     }
     
     func updateAnnotations() {
         guard mapView != nil else {return}
         for apartment in apartments {
-            let annotation = MGLPointAnnotation()
-            
-            annotation.coordinate = CLLocationCoordinate2D(latitude: apartment.location.latitude, longitude: apartment.location.longitude)
-            annotation.title = apartment.userAddress
-            annotation.subtitle = "\(apartment.priceUSD)$"
+            let annotation = ApartmentAnnotation(apartment: apartment)
             
             mapView.addAnnotation(annotation)
         }
+        mapView.setNeedsDisplay()
+    }
+    
+    func openApartmentDetails(annotation: MGLAnnotation) {
+        let annotation = annotation as! ApartmentAnnotation
+        let apartment = annotation.apartment
+        
+        webController?.apartment = apartment
+        self.navigationController?.pushViewController(webController!, animated: true)
     }
     
     func mapView(mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         return true
     }
+    
+    func mapView(mapView: MGLMapView, rightCalloutAccessoryViewForAnnotation annotation: MGLAnnotation) -> UIView? {
+        return UIButton(type: .DetailDisclosure)
+    }
+    
+    func mapView(mapView: MGLMapView, annotation: MGLAnnotation, calloutAccessoryControlTapped control: UIControl){
+        openApartmentDetails(annotation)
+    }
+
 }

@@ -185,9 +185,7 @@ class ApartmentListController: UICollectionViewController {
         guard (webController != nil) else { return }
         let apartment = apartments[indexPath.row]
         
-        let url = NSURL(string: apartment.url)!
-        let urlRequest = NSURLRequest(URL: url)
-        webController?.webView.loadRequest(urlRequest)
+        webController?.apartment = apartment
         self.navigationController?.pushViewController(webController!, animated: true)
     }
     

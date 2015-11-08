@@ -15,6 +15,13 @@ class WebController: UIViewController, UIWebViewDelegate {
             webView.hidden = newValue
         }
     }
+    var apartment : Apartment? {
+        didSet{
+            let url = NSURL(string: self.apartment!.url)!
+            let urlRequest = NSURLRequest(URL: url)
+            self.webView.loadRequest(urlRequest)
+        }
+    }
     @IBOutlet var webView : UIWebView!
     var shouldHideStatusBar = false {
         didSet{
