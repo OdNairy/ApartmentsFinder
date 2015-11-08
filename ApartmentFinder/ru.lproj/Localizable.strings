@@ -13,3 +13,17 @@
 /* OwnerType */
 "Owner" = "Собственник";
 
+/* Apartment rent type with 1 room only not full flat */
+"room" = "Комната";
+
+"1 room" = "1 комнатная";
+
+"2 rooms" = "2 комнатная";
+
+"3 rooms" = "3 комнатная";
+
+"4 rooms" = "4 комнатная";
+
+"5 rooms" = "5 комнатная";
+
+"6 rooms" = "6 комнатная";

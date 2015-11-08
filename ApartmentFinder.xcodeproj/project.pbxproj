@@ -17,6 +17,7 @@
 		FE7005A81BEF3B3200404BD4 /* ApartmentTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7005A71BEF3B3200404BD4 /* ApartmentTypeCell.swift */; };
 		FE71756C1BD434C700B21B4D /* ApartmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71756A1BD434C700B21B4D /* ApartmentCell.swift */; };
 		FE71756D1BD434C700B21B4D /* ApartmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE71756B1BD434C700B21B4D /* ApartmentCell.xib */; };
+		FE89F16C1BEF74FB00D1279C /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = FE89F16A1BEF74FB00D1279C /* Localizable.stringsdict */; };
 		FE8C41E01BD8D5DD00CF6BFA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE8C41E21BD8D5DD00CF6BFA /* Localizable.strings */; };
 		FE9C28DA1BE0EEBE0095E950 /* TextFieldOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9C28D91BE0EEBE0095E950 /* TextFieldOptionCell.swift */; };
 		FE9C28DC1BE0F5BA0095E950 /* OptionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9C28DB1BE0F5BA0095E950 /* OptionsData.swift */; };
@@ -45,6 +46,7 @@
 		FE7005A71BEF3B3200404BD4 /* ApartmentTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApartmentTypeCell.swift; sourceTree = "<group>"; };
 		FE71756A1BD434C700B21B4D /* ApartmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApartmentCell.swift; sourceTree = "<group>"; };
 		FE71756B1BD434C700B21B4D /* ApartmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApartmentCell.xib; sourceTree = "<group>"; };
+		FE89F16B1BEF74FB00D1279C /* ru */ = {isa = PBXFileReference; explicitFileType = text.plist.xml; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		FE8C41E11BD8D5DD00CF6BFA /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FE9C28D91BE0EEBE0095E950 /* TextFieldOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldOptionCell.swift; sourceTree = "<group>"; };
 		FE9C28DB1BE0F5BA0095E950 /* OptionsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsData.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				FEECBF231BD3748000D5DC72 /* Info.plist */,
 				FE13FF0C1BDFC607001F61C5 /* InfoPlist.strings */,
 				FE8C41E21BD8D5DD00CF6BFA /* Localizable.strings */,
+				FE89F16A1BEF74FB00D1279C /* Localizable.stringsdict */,
 				FEECBF1E1BD3748000D5DC72 /* Assets.xcassets */,
 				FEECBF201BD3748000D5DC72 /* LaunchScreen.storyboard */,
 				FEECBF1B1BD3748000D5DC72 /* ApartmentFinder.xcdatamodeld */,
@@ -222,6 +225,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = FEECBF081BD3747F00D5DC72;
 			productRefGroup = FEECBF121BD3748000D5DC72 /* Products */;
@@ -243,6 +247,7 @@
 				FE8C41E01BD8D5DD00CF6BFA /* Localizable.strings in Resources */,
 				FEECBF1F1BD3748000D5DC72 /* Assets.xcassets in Resources */,
 				FE71756D1BD434C700B21B4D /* ApartmentCell.xib in Resources */,
+				FE89F16C1BEF74FB00D1279C /* Localizable.stringsdict in Resources */,
 				FEECBF1A1BD3748000D5DC72 /* Main.storyboard in Resources */,
 				FE7005A41BEE583A00404BD4 /* Settings.bundle in Resources */,
 			);
@@ -329,6 +334,14 @@
 				FE13FF0B1BDFC607001F61C5 /* ru */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FE89F16A1BEF74FB00D1279C /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE89F16B1BEF74FB00D1279C /* ru */,
+			);
+			name = Localizable.stringsdict;
 			sourceTree = "<group>";
 		};
 		FE8C41E21BD8D5DD00CF6BFA /* Localizable.strings */ = {

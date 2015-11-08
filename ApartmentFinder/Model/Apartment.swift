@@ -44,8 +44,11 @@ class Apartment: PFObject, PFSubclassing {
         if self.rentType =~ "_room" {
             let roomCountText = Regex.init("(\\d+)_room").groups(self.rentType).first()!.last()!
             if let roomsCount = Int(roomCountText) {
-                let roomsTextSuffix = roomsCount > 2 ? "s" : ""
-                roomsText = "\(roomsCount) room\(roomsTextSuffix)"
+//                let roomsTextSuffix = roomsCount > 1 ? "s" : ""
+//                let nonlocalizedString = "\(roomsCount) room\(roomsTextSuffix)"
+//                roomsText = NSString.localizedStringWithFormat("%zd room(s)", roomsCount) as String
+                  roomsText = String.localizedStringWithFormat(NSLocalizedString("%zd room(s)", comment: ""), roomsCount)
+//                roomsText = NSLocalizedString(nonlocalizedString, comment: "Dynamic value of rooms count on Apartment class to get roomsText()")
             }
         }
         return roomsText

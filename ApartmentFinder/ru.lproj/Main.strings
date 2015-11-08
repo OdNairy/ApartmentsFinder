@@ -1,14 +1,59 @@
+/* Class = "UINavigationItem"; title = "Apartment"; ObjectID = "5jT-Tk-kDm"; */
+"5jT-Tk-kDm.title" = "Квартира";
+
+/* Class = "UISegmentedControl"; C9r-JF-EK1.segmentTitles[0] = "room"; ObjectID = "C9r-JF-EK1"; */
+"C9r-JF-EK1.segmentTitles[0]" = "комната";
+
+/* Class = "UISegmentedControl"; C9r-JF-EK1.segmentTitles[1] = "1"; ObjectID = "C9r-JF-EK1"; */
+"C9r-JF-EK1.segmentTitles[1]" = "1";
+
+/* Class = "UISegmentedControl"; C9r-JF-EK1.segmentTitles[2] = "2"; ObjectID = "C9r-JF-EK1"; */
+"C9r-JF-EK1.segmentTitles[2]" = "2";
+
+/* Class = "UISegmentedControl"; C9r-JF-EK1.segmentTitles[3] = "3"; ObjectID = "C9r-JF-EK1"; */
+"C9r-JF-EK1.segmentTitles[3]" = "3";
+
+/* Class = "UISegmentedControl"; C9r-JF-EK1.segmentTitles[4] = "4+"; ObjectID = "C9r-JF-EK1"; */
+"C9r-JF-EK1.segmentTitles[4]" = "4+";
+
+/* Class = "UISegmentedControl"; C9r-JF-EK1.segmentTitles[5] = "All"; ObjectID = "C9r-JF-EK1"; */
+"C9r-JF-EK1.segmentTitles[5]" = "Все";
+
+/* Class = "UILabel"; text = "Rooms type"; ObjectID = "CQD-LH-hYX"; */
+"CQD-LH-hYX.text" = "Тип квартиры";
+
 /* Class = "UINavigationItem"; title = "Apartments"; ObjectID = "Lgc-Eu-s8v"; */
 "Lgc-Eu-s8v.title" = "Квартиры";
 
+/* Class = "UINavigationItem"; title = "Map"; ObjectID = "Pdb-aE-YH6"; */
+"Pdb-aE-YH6.title" = "Карта";
+
 /* Class = "UIBarButtonItem"; title = "Options"; ObjectID = "QXJ-xT-TDC"; */
 "QXJ-xT-TDC.title" = "Настройки";
+
+/* Class = "UILabel"; text = "Owner type"; ObjectID = "ThZ-4d-BQz"; */
+"ThZ-4d-BQz.text" = "Собственник";
+
+/* Class = "UIBarButtonItem"; title = "Map"; ObjectID = "WXQ-bs-jr7"; */
+"WXQ-bs-jr7.title" = "Карта";
+
+/* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "aaW-FW-U6l"; */
+"aaW-FW-U6l.title" = "Отмена";
+
+/* Class = "UIBarButtonItem"; title = "Done"; ObjectID = "aeb-OH-alK"; */
+"aeb-OH-alK.title" = "Принять";
+
+/* Class = "UILabel"; text = "$"; ObjectID = "n7e-nQ-8lx"; */
+"n7e-nQ-8lx.text" = "$";
 
 /* Class = "UISegmentedControl"; wXK-ph-0Jh.segmentTitles[0] = "Agent"; ObjectID = "wXK-ph-0Jh"; */
 "wXK-ph-0Jh.segmentTitles[0]" = "Агентство";
 
 /* Class = "UISegmentedControl"; wXK-ph-0Jh.segmentTitles[1] = "Owner"; ObjectID = "wXK-ph-0Jh"; */
 "wXK-ph-0Jh.segmentTitles[1]" = "Собственник";
+
+/* Class = "UISegmentedControl"; wXK-ph-0Jh.segmentTitles[2] = "All"; ObjectID = "wXK-ph-0Jh"; */
+"wXK-ph-0Jh.segmentTitles[2]" = "Все";
 
 /* Class = "UINavigationItem"; title = "Options"; ObjectID = "whO-ND-wQd"; */
 "whO-ND-wQd.title" = "Настройки";
