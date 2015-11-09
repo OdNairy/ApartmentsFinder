@@ -12,17 +12,22 @@ import TLYShyNavBar
 class WebController: UIViewController, UIWebViewDelegate {
     var loadingURLRequest = false {
         willSet{
-            webView.hidden = newValue
+            webView?.hidden = newValue
         }
     }
     var apartment : Apartment? {
         didSet{
-            let url = NSURL(string: self.apartment!.url)!
-            let urlRequest = NSURLRequest(URL: url)
-            self.webView.loadRequest(urlRequest)
+            self.updateApartmentScreen()
         }
     }
-    @IBOutlet var webView : UIWebView!
+    
+    var apartmentObjectId : String? {
+        didSet {
+            let apartment = try! Apartment.query()!.getObjectWithId(apartmentObjectId!) as! Apartment
+            self.apartment = apartment
+        }
+    }
+    @IBOutlet var webView : UIWebView?
     var shouldHideStatusBar = false {
         didSet{
             if shouldHideStatusBar != oldValue {
@@ -32,13 +37,21 @@ class WebController: UIViewController, UIWebViewDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.updateApartmentScreen()
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.shyNavBarManager.scrollView = self.webView.scrollView
+        self.shyNavBarManager.scrollView = self.webView?.scrollView
         self.shyNavBarManager.extensionView = nil
+    }
+    
+    func updateApartmentScreen(){
+        guard apartment != nil else {return }
+        let url = NSURL(string: self.apartment!.url)!
+        let urlRequest = NSURLRequest(URL: url)
+        self.webView?.loadRequest(urlRequest)
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -62,10 +75,17 @@ class WebController: UIViewController, UIWebViewDelegate {
     }
     
     @IBAction func share(){
-        guard let url = self.webView.request?.URL else {
-            return
+        guard ((apartment?.objectId) != nil) else {return}
+        let url = "apartmentfinder://id=\(apartment!.objectId!)"
+        let activityController = UIActivityViewController(activityItems: ["Checkout apartment: \(url)"],
+            applicationActivities: nil)
+        self.presentViewController(activityController, animated: true) { () -> Void in
+            
         }
-        UIApplication.sharedApplication().openURL(url)
+//        guard let url = self.webView.request?.URL else {
+//            return
+//        }
+//        UIApplication.sharedApplication().openURL(url)
     }
 
     /*

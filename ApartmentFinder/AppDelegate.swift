@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Parse
 import GoogleMaps
+import Cent
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,7 +32,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
+    
+    func handleLaunchOptions(launchOptions: [NSObject: AnyObject]) {
+        let launchOptionsURL = launchOptions[UIApplicationLaunchOptionsURLKey] as! NSURL
+        handleLaunchURL(launchOptionsURL)
+    }
+    func handleLaunchURL(url: NSURL) {
+        let id = Regex("id=(.+)").groups(url.absoluteString)[0][1]
+        print("id \(id)")
+        let webController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("WebController") as! WebController
+        webController.apartmentObjectId = id
+        
+        let rootNavigationController = self.window?.rootViewController as? UINavigationController
+        guard rootNavigationController != nil else {return}
+        
+        rootNavigationController!.pushViewController(webController, animated: false)
+    }
 
+    
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        handleLaunchURL(url)
+        return true
+    }
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
