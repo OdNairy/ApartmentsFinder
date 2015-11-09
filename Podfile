@@ -10,6 +10,7 @@ pod 'Dollar'
 pod 'Cent'
 pod 'DateTools'
 pod 'Mapbox-iOS-SDK'
+pod 'GoogleMaps'
 
 # disable bitcode in every sub-target
 post_install do |installer|
