@@ -4,6 +4,7 @@ use_frameworks!
 inhibit_all_warnings!
 
 pod 'Parse'
+pod 'ParseCrashReporting'
 pod 'PINRemoteImage', :inhibit_warnings => true
 pod 'TLYShyNavBar'
 pod 'Dollar'

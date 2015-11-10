@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Parse
+import ParseCrashReporting
 import GoogleMaps
 import Cent
 
@@ -22,8 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Parse.enableLocalDatastore()
         GMSServices.provideAPIKey("AIzaSyDPgBZjkp4ZU6FdyFiCnjV_PuBUHbtZVos")
-        
+
         // Initialize Parse.
+        ParseCrashReporting.enable()
         Parse.setApplicationId("0zvc4br25b2ggshPCXN3BolmqKIcvbx70ZdgwrqL",
             clientKey: "XRhg2bdSlpQnpEA6ugOtJLheETzOP46LdWBTHcHf")
         
