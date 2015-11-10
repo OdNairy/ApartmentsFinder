@@ -22,6 +22,16 @@ class OptionsData : NSObject, NSSecureCoding {
         case Agent = 0
         case Owner = 1
         case All = 2
+        func toString() -> String{
+            switch (self){
+            case .Agent:
+                return "Agent"
+            case .Owner:
+                return "Owner"
+            case .All:
+                return "All"
+            }
+        }
     }
     
     enum Currency : Int {
@@ -37,6 +47,18 @@ class OptionsData : NSObject, NSSecureCoding {
         case threeRooms
         case fourAndMoreRooms
         case All
+
+        func toString() -> String {
+            switch(self){
+            case .NotDeterminated: return "NoD"
+            case .room: return "room"
+            case .oneRoom: return "1 room"
+            case .twoRooms: return "2 rooms"
+            case .threeRooms: return "3 rooms"
+            case .fourAndMoreRooms: return "4+ rooms"
+            case .All : return "All"
+            }
+        }
     }
     
     
@@ -85,5 +107,18 @@ class OptionsData : NSObject, NSSecureCoding {
         aCoder.encodeInteger(owner.rawValue, forKey: "owner")
         aCoder.encodeInteger(apartmentType.rawValue, forKey: "apartmentType")
         
+    }
+    
+    func analyticMap() -> [String:String] {
+        var map = [String:String]()
+        if let minimumPrice = minimumPrice {
+            map["Minimum Price"] = String(minimumPrice)
+        }
+        if let maximumPrice = maximumPrice {
+            map["Maximum Price"] = String(maximumPrice)
+        }
+        map["Owner"] = owner.toString()
+        map["Apartment type"] = apartmentType.toString()
+        return map
     }
 }

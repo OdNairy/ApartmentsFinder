@@ -9,6 +9,7 @@
 import UIKit
 import TLYShyNavBar
 import Bolts
+import Parse
 
 private let reuseIdentifier = "Cell"
 
@@ -105,6 +106,7 @@ class ApartmentListController: UICollectionViewController {
         default:   break
         }
         
+        PFAnalytics.trackEvent("search", dimensions: optionsData.analyticMap())
         
         var task = query.findObjectsInBackground()
         task = task.continueWithSuccessBlock({ (task) -> AnyObject! in
