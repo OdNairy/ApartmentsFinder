@@ -32,7 +32,8 @@ class Apartment: PFObject, PFSubclassing {
     @NSManaged var photoUrl : String
     @NSManaged var owner : Bool
     @NSManaged var rentType : String
-    @NSManaged var apartmentAddedAt : Date
+    @NSManaged var createdAtOnliner : Date
+    @NSManaged var updatedAtOnliner : Date
     @NSManaged var location : PFGeoPoint
     
     class func findAll() -> BFTask {
@@ -61,6 +62,6 @@ class Apartment: PFObject, PFSubclassing {
 //
 //            self.timeLabel.text = dateFmt.stringFromDate(apartment.apartmentAddedAt)
 
-        return apartmentAddedAt.timeAgoSinceNow()
+        return updatedAtOnliner.timeAgoSinceNow()
     }
 }
